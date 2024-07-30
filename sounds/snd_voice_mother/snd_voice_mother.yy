@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_voice_mother",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":512,
+  "compression":3,
+  "conversionMode":0,
+  "duration":0.240385,
+  "name":"snd_voice_mother",
+  "parent":{
+    "name":"Звуки",
+    "path":"folders/Звуки.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_voice_mother.wav",
+  "type":1,
+  "volume":1.0,
+}

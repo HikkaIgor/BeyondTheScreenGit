@@ -1,0 +1,1 @@
+text_id = "obj_wardrobe_teen"

@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_calm_new",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":512,
+  "compression":3,
+  "conversionMode":0,
+  "duration":92.8,
+  "name":"snd_calm_new",
+  "parent":{
+    "name":"Звуки",
+    "path":"folders/Звуки.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_calm_new.ogg",
+  "type":2,
+  "volume":0.13,
+}

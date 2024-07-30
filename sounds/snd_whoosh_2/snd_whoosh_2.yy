@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_whoosh_2",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":512,
+  "compression":3,
+  "conversionMode":0,
+  "duration":0.776042,
+  "name":"snd_whoosh_2",
+  "parent":{
+    "name":"Звуки",
+    "path":"folders/Звуки.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":48000,
+  "soundFile":"snd_whoosh_2.ogg",
+  "type":1,
+  "volume":0.04,
+}

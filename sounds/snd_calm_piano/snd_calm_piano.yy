@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_calm_piano",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":3,
+  "conversionMode":0,
+  "duration":128.05222,
+  "name":"snd_calm_piano",
+  "parent":{
+    "name":"Звуки",
+    "path":"folders/Звуки.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_calm_piano.mp3",
+  "type":2,
+  "volume":0.29,
+}

@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_metal_crash",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":3,
+  "conversionMode":0,
+  "duration":2.899592,
+  "name":"snd_metal_crash",
+  "parent":{
+    "name":"Звуки",
+    "path":"folders/Звуки.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_metal_crash.mp3",
+  "type":2,
+  "volume":0.44,
+}
