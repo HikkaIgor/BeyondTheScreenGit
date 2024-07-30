@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_pressing_button",
-    "path":"sprites/spr_pressing_button/spr_pressing_button.yy",
+    "name":"spr_pressing_button_player",
+    "path":"sprites/spr_pressing_button_player/spr_pressing_button_player.yy",
   },
   "spriteMaskId":null,
   "visible":true,

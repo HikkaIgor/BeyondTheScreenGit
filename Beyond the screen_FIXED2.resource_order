@@ -187,6 +187,7 @@
     {"name":"spr_player_minigame_left","order":2,"path":"sprites/spr_player_minigame_left/spr_player_minigame_left.yy",},
     {"name":"spr_player_minigame_right","order":3,"path":"sprites/spr_player_minigame_right/spr_player_minigame_right.yy",},
     {"name":"spr_pressing_button_2x2","order":17,"path":"sprites/spr_pressing_button_2x2/spr_pressing_button_2x2.yy",},
+    {"name":"spr_pressing_button_player","order":27,"path":"sprites/spr_pressing_button_player/spr_pressing_button_player.yy",},
     {"name":"spr_pressing_button","order":16,"path":"sprites/spr_pressing_button/spr_pressing_button.yy",},
     {"name":"spr_pushblock_area","order":18,"path":"sprites/spr_pushblock_area/spr_pushblock_area.yy",},
     {"name":"spr_puzzle_floor","order":23,"path":"sprites/spr_puzzle_floor/spr_puzzle_floor.yy",},
