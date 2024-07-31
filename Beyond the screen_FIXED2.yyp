@@ -105,6 +105,7 @@
     {"id":{"name":"obj_scale","path":"objects/obj_scale/obj_scale.yy",},},
     {"id":{"name":"obj_settings","path":"objects/obj_settings/obj_settings.yy",},},
     {"id":{"name":"obj_SFX","path":"objects/obj_SFX/obj_SFX.yy",},},
+    {"id":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},},
     {"id":{"name":"obj_sounds_volume","path":"objects/obj_sounds_volume/obj_sounds_volume.yy",},},
     {"id":{"name":"obj_sport_teenager_1","path":"objects/obj_sport_teenager_1/obj_sport_teenager_1.yy",},},
     {"id":{"name":"obj_sport_teenager_2","path":"objects/obj_sport_teenager_2/obj_sport_teenager_2.yy",},},
@@ -277,8 +278,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"rm_puzzle_room_1","path":"rooms/rm_puzzle_room_1/rm_puzzle_room_1.yy",},},
     {"roomId":{"name":"rm_main_menu","path":"rooms/rm_main_menu/rm_main_menu.yy",},},
+    {"roomId":{"name":"rm_puzzle_room_1","path":"rooms/rm_puzzle_room_1/rm_puzzle_room_1.yy",},},
     {"roomId":{"name":"rm_puzzle_room_4","path":"rooms/rm_puzzle_room_4/rm_puzzle_room_4.yy",},},
     {"roomId":{"name":"rm_puzzle_room_3","path":"rooms/rm_puzzle_room_3/rm_puzzle_room_3.yy",},},
     {"roomId":{"name":"rm_main_menu_settings","path":"rooms/rm_main_menu_settings/rm_main_menu_settings.yy",},},

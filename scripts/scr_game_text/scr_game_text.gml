@@ -114,7 +114,7 @@ function scr_game_text(_text_id)
 					
 					global.karma += 1;
 
-					if (!instance_exists(obj_fade))
+					if  (!instance_exists(obj_fade))
 				{
 					var _targetRoom = rm_child_room;
 					scr_fade(_targetRoom,60,c_black);

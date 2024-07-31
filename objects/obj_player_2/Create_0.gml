@@ -6,3 +6,4 @@ last_direction = 0;
 
 // CAN CHANGE
 movement_speed = 125;
+collision_size = 10;
