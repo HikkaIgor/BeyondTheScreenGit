@@ -22,14 +22,20 @@ function scr_game_text(_text_id)
 		break;
 		//Коробка с игрушками
 		case "obj_toy_box":
+		if global._played = 0{
 		scr_text("Коробка с вашими любимыми игрушками")
 		scr_text("Может, поиграть с ними?","child")
 				scr_option("Поиграть","obj_toy_box - yes");
-					scr_text_color(0,30,c_white,c_white,c_white,c_white)
 				scr_option("Отложить","obj_toy_box - no");
-					scr_text_color(0,30,c_white,c_white,c_white,c_white)
 				break;
+		}
+		else if global._played = 1
+					{
+						scr_text("Вы наигрались")
+						break;
+					}
 			case "obj_toy_box - yes":
+					if global._played = 0{
 					global._played = 1
 					scr_text("Почему бы и нет!","child_happy")
 						if (!instance_exists(obj_fade))
@@ -40,14 +46,10 @@ function scr_game_text(_text_id)
 
 
 			break;
-			
+					}
 			case "obj_toy_box - no":
 					scr_text("Может позже","child")
 					scr_text("Вы положили игрушку на место");
-				
-			break;
-			case "obj_toy_box - played":
-				scr_text("Я уже наигрался")
 				break;
 		//Компьютерный стол
 		case "obj_computer":
@@ -109,31 +111,43 @@ function scr_game_text(_text_id)
 			break;
 		}
 			case "obj_door - help":
+			if global._helped_mom = 0
+			{
 					global._helped_mom = 1
 					scr_text("Хорошо, мам!","child_happy")
 					
 					global.karma += 1;
-
 					if  (!instance_exists(obj_fade))
 				{
 					var _targetRoom = rm_child_room;
 					scr_fade(_targetRoom,60,c_black);
 				}
-					break;
 				
+			
+					break;
+			}
+			else if global._helped_mom = 1
+			{
+				scr_text("Хорошо, что я помог маме!","child_happy")
+				break;
+			}
 					
 			case "obj_door - refuse":
+			if global._helped_mom = 0 && global._not_helped_mom = 0
+			{
 				scr_text("Мам,я занят!","child_angry")
 				scr_text("Хорошо,сынок...","mother_sad",-1)
 				global._not_helped_mom = 1;
 				global.karma -= 1;
 			
 			break;
-		case "obj_door - helped":
-		scr_text("Хорошо, что я помог маме!","child_happy")
-		break;
-		case "obj_door - not helped":
-		scr_text("Маме уже не нужна помощь...")
+			}
+			else if global._not_helped_mom = 1
+			{
+					scr_text("Маме уже не нужна помощь...")
+					break;
+			}
+
 		break;
 		//Рост
 		case "obj_scale":
@@ -158,6 +172,7 @@ function scr_game_text(_text_id)
 		break;
 		}
 			case "obj_plants - polit":
+			if global._polit = 0{
 			global._polit = 1;
 			scr_text("Отлично, Вы полили цветы!")
 			global.karma+= 1;
@@ -167,18 +182,26 @@ function scr_game_text(_text_id)
 						scr_fade(_targetRoom,60,c_black);
 					}
 			break;
+			}
+			else if global._polit = 1
+			{
+			scr_text("Цветы стали выглядеть гораздо лучше!","child_happy")
+			break;
+			}
 			case "obj_plants - nepolit":
+			if global._polit = 0 && global._nepolit = 0{
 			global._nepolit = 1;
 			scr_text("Главное, чтобы они не завяли...","child_sad")
 			global.karma-= 1;
 			break;
-			case "obj_plants - zabil":
+			}
+			else global._nepolit = 1
+			{
 			scr_text("Цветок можно и не поливать...")
 			break;
+			}
 			
-			case "obj_plants - polil":
-			scr_text("Цветы стали выглядеть гораздо лучше!","child_happy")
-			break;
+			
 		
 	//Тинейджер
 		//Тумбочка
@@ -212,7 +235,7 @@ function scr_game_text(_text_id)
 		//Спорт
 
 		case "obj_sport_teen":
-		if global._sport = 0
+		if global._sport = 0 && global._no_sport = 0
 		{
 		scr_text("На полу лежат спортивный инвентарь")
 		scr_text("Заняться спортом?")
@@ -220,7 +243,25 @@ function scr_game_text(_text_id)
 			scr_option("Можно и отдохнуть","obj_sport_teen - no")
 			break;
 		}
+		else if global._sport = 1
+			{
+
+			scr_text("Ух, надо бы почаще заниматься!","teenager_happy")
+			break;
+		
+			}
+		else if global._no_sport = 1
+			{
+
+			scr_text("Вы больше не хотите заниматься спортом")
+			scr_text("Хотя знаете, что в здоровом теле - здоровый дух")
+			scr_text_float(35,47)
+			break;
+		
+			}
 			case "obj_sport_teen - yes":
+			if global._sport = 0
+			{
 					global._sport = 1
 					scr_text("Light weight baby!","teenager_happy")
 					global.karma += 1;
@@ -231,17 +272,19 @@ function scr_game_text(_text_id)
 					scr_fade(_targetRoom,60,c_black);
 				}
 					break;
-				
+			}
 					
+			
 			case "obj_sport_teen - no":
+			if global._sport = 0 && global._no_sport = 0{
 				scr_text("Да нафиг этот спорт нужен вообще!","teenager_angry")
 				global.karma -= 1;
 				global._no_sport = 1;
 			
 			break;
-		case "obj_sport_teen - sport":
-		scr_text("Ух, нужно почаще заниматься","teenager_happy")
-		break;
+			}
+			
+		
 		case "obj_sport_teen - no sport":
 		scr_text("Вы больше не хотите заниматься спортом")
 		scr_text("Хотя знаете, что в здоровом теле - здоровый дух")
@@ -256,7 +299,7 @@ function scr_game_text(_text_id)
 		break;
 		//Мусорка
 		case "obj_trash_teen":
-		if global._trash_clean = 0
+		if global._trash_clean = 0 && global._trash_not_clean = 0
 		{
 			scr_text("Сколько же мусора успело скопиться","teenager")
 			scr_text("Среди мусора видны неудачные рисунки и салфетки")
@@ -265,7 +308,21 @@ function scr_game_text(_text_id)
 			scr_option("Нет","obj_trash_teen - no throw")
 			break;
 		}
+		else if global._trash_clean = 1
+		{
+		scr_text("Давно нужно было это сделать!","teenager_happy")
+		break;
+		}
+		else if global._trash_not_clean = 1
+		{
+			scr_text("Потом... Когда-нибудь...","teenager_sad")
+			scr_text_float(0,24)
+			scr_text("Может быть...","teenager_sad")
+			scr_text_float(0,13)
+			break;
+		}
 			case "obj_trash_teen - throw":
+			if global._trash_clean = 0{
 					global._trash_clean = 1
 					scr_text("С глаз долой... Из сердца вон!","teenager_happy")
 					global.karma += 1;
@@ -277,23 +334,17 @@ function scr_game_text(_text_id)
 					scr_fade(_targetRoom,60,c_black);
 				}
 					break;
-				
+			}
 					
 			case "obj_trash_teen - no throw":
+			if global._trash_not_clean = 0{
 				scr_text("Как-нибудь потом...","teenager_sad")
 				global.karma -= 1;
 				global._trash_not_clean = 1;
 			
 			break;
-		case "obj_trash_teen - no trash":
-		scr_text("Давно нужно было это сделать","teenager_happy")
-		break;
-		case "obj_sport_teen - still trash":
-		scr_text("Потом... Когда-нибудь...","teenager_sad")
-			scr_text_float(0,24)
-		scr_text("Может быть...","teenager_sad")
-			scr_text_float(0,13)
-		break;
+			}
+
 		//Шкаф
 		case "obj_wardrobe_teen":
 		scr_text("Одежды стало намного больше")

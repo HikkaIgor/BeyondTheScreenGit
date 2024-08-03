@@ -9,3 +9,4 @@ if (player_can_interact) {
     var e_sprite_y = y - sprite_height; // Adjust the y-offset as needed
     draw_sprite_ext(spr_interact, 0, e_sprite_x, e_sprite_y,2,2,0,c_white,1);
 }
+draw_text(x,y,string(global.karma))

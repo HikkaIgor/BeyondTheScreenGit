@@ -1,1 +1,0 @@
-text_id = "obj_door - not helped"
