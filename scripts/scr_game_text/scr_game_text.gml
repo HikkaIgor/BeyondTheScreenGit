@@ -359,7 +359,7 @@ function scr_game_text(_text_id)
 		//Шкаф
 		case "obj_wardrobe_teen":
 		scr_text("Одежды стало намного больше")
-		scr_text("Но мне по прежнему нечего надеть...","teenager_sad")
+		scr_text("Мне по прежнему нечего надеть...","teenager_sad")
 		break;
 		//Книжный шкаф
 		case "obj_bookshelf_teen":
@@ -391,8 +391,10 @@ function scr_game_text(_text_id)
 		}
 		else
 		scr_text("Сын, я дома...","mother_sad",-1)
-		scr_text("Мама пришла... Посижу пока в комнате","teenager_sad")
+		scr_text("Мама пришла...","teenager_sad")
 			scr_text_shake(0,14)
+		scr_text("Посижу пока в комнате...","teenager_sad")
+			scr_text_shake(0,24)
 		break;
 		//Компьютерный стол
 		case "obj_computer_teen":

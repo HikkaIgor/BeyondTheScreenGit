@@ -15,5 +15,5 @@ global._trash_clean = 0;
 global._trash_not_clean = 0;
 global._trash = 0
 global._met_mom = 0;
-global._met_mom = 0;
 global._trash = 0;
+global.boot_up = 0;
