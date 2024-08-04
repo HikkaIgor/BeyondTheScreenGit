@@ -1,5 +1,6 @@
 if position_meeting(mouse_x,mouse_y,id) && mouse_check_button_pressed(mb_left)
 {
+	
 	if image_xscale = 1 && (cooldown < 1)
 {
 	_scale = 2
@@ -7,6 +8,7 @@ if position_meeting(mouse_x,mouse_y,id) && mouse_check_button_pressed(mb_left)
 	image_yscale = 2;
 	move_speed = 1
 	cooldown = 5
+	obj_SFX.whoosh1Snd = true;
 
 	if place_meeting(target_x,target_y,obj_wall) || place_meeting(target_x,target_y,obj_player) || place_meeting(target_x,target_y,obj_pushblock_area) 
 	{
@@ -46,6 +48,7 @@ else
 
 if sliding == true 
 {
+	
 	var _real_dir = face_dir * 90;
 	
 	var _target_x_dist = lengthdir_x(grid_space, _real_dir);

@@ -33,13 +33,13 @@ if whoosh1Snd == true
 {
 	var _snd = audio_play_sound(snd_whoosh_1,8,false)
 	audio_sound_gain(_snd,_sfxVol,0);
-	clickSnd = false;
+	whoosh1Snd = false;
 }
 if whoosh2Snd == true
 {
 	var _snd = audio_play_sound(snd_whoosh_2,8,false)
 	audio_sound_gain(_snd,_sfxVol,0);
-	clickSnd = false;
+	whoosh2Snd = false;
 }
 if guitarSnd1 == true
 {
@@ -60,4 +60,25 @@ if metalSnd == true
 	var _snd = audio_play_sound(snd_metal_crash,8,false)
 	audio_sound_gain(_snd,_sfxVol,0);
 	metalSnd = false;
+}
+
+if goodChoiseSnd == true
+{
+	var _snd = audio_play_sound(snd_good_choise,8,false)
+	audio_sound_gain(_snd,_sfxVol,0);
+	goodChoiseSnd = false;
+}
+
+if badChoiseSnd == true
+{
+	var _snd = audio_play_sound(snd_bad_choise,8,false)
+	audio_sound_gain(_snd,_sfxVol,0);
+	badChoiseSnd = false;
+}
+
+if pushSnd == true
+{
+	var _snd = audio_play_sound(snd_push,8,false)
+	audio_sound_gain(_snd,_sfxVol,0);
+	pushSnd = false;
 }

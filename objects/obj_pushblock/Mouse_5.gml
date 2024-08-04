@@ -4,4 +4,5 @@ if image_xscale = 2
 	image_yscale = 1;
 	move_speed = 2
 	_scale = 1;
+	obj_SFX.whoosh2Snd = true;
 }

@@ -15,3 +15,8 @@ guitarSnd1 = false;
 slamSnd = false;
 
 metalSnd = false;
+
+goodChoiseSnd = false;
+badChoiseSnd = false;
+
+pushSnd = false;

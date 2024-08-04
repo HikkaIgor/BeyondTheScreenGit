@@ -103,13 +103,18 @@ function scr_game_text(_text_id)
 		//Дверь
 
 		case "obj_door":
-		if global._helped_mom = 0
+		if global._helped_mom = 0 && global._not_helped_mom = 0
 		{
 		scr_text("Сынок! Помоги разобрать продукты, пожалуйста!","mother",-1)
 			scr_option("Помочь","obj_door - help")
 			scr_option("Отказаться","obj_door - refuse")
 			break;
 		}
+		if global._not_helped_mom = 1
+			{
+					scr_text("Маме уже не нужна помощь...")
+					break;
+			}
 			case "obj_door - help":
 			if global._helped_mom = 0
 			{
@@ -120,8 +125,9 @@ function scr_game_text(_text_id)
 					if  (!instance_exists(obj_fade))
 				{
 					var _targetRoom = rm_child_room;
-					scr_fade(_targetRoom,60,c_black);
+					scr_fade(_targetRoom,30,c_grass);
 				}
+				obj_SFX.goodChoiseSnd = true;
 				
 			
 					break;
@@ -139,14 +145,10 @@ function scr_game_text(_text_id)
 				scr_text("Хорошо,сынок...","mother_sad",-1)
 				global._not_helped_mom = 1;
 				global.karma -= 1;
-			
+				obj_SFX.badChoiseSnd = true;
 			break;
 			}
-			else if global._not_helped_mom = 1
-			{
-					scr_text("Маме уже не нужна помощь...")
-					break;
-			}
+			
 
 		break;
 		//Рост
@@ -163,7 +165,7 @@ function scr_game_text(_text_id)
 		//Растения
 	
 		case "obj_plants":
-		if global._polit = 0
+		if global._polit = 0 && global._nepolit = 0
 		{
 		scr_text("Давно я их не поливал","child")
 		scr_text("Полить цветы?")
@@ -171,6 +173,13 @@ function scr_game_text(_text_id)
 			scr_option("Не поливать","obj_plants - nepolit");
 		break;
 		}
+		else if global._nepolit = 1
+		{
+		scr_text("Цветок можно и не поливать...")
+			break;
+		}
+		
+		
 			case "obj_plants - polit":
 			if global._polit = 0{
 			global._polit = 1;
@@ -179,8 +188,9 @@ function scr_game_text(_text_id)
 			if (!instance_exists(obj_fade))
 					{
 						var _targetRoom = rm_child_room;
-						scr_fade(_targetRoom,60,c_black);
+						scr_fade(_targetRoom,30,c_grass);
 					}
+					obj_SFX.goodChoiseSnd = true;
 			break;
 			}
 			else if global._polit = 1
@@ -193,13 +203,10 @@ function scr_game_text(_text_id)
 			global._nepolit = 1;
 			scr_text("Главное, чтобы они не завяли...","child_sad")
 			global.karma-= 1;
+			obj_SFX.badChoiseSnd = true;
 			break;
 			}
-			else global._nepolit = 1
-			{
-			scr_text("Цветок можно и не поливать...")
-			break;
-			}
+			
 			
 			
 		
@@ -226,10 +233,12 @@ function scr_game_text(_text_id)
 				break;
 			case "obj_table_teen - yes":
 				scr_text("Вы погладили камень, молодец!")
+				scr_text_float(1,29)
 			break;
 			case "obj_table_teen - no":
 				scr_text("Камень это запомнит >:(","angry")
 				 scr_text_color(20,23,c_red,c_red,c_red,c_red)
+				 scr_text_shake(1,19)
 			break;
 
 		//Спорт
@@ -265,11 +274,11 @@ function scr_game_text(_text_id)
 					global._sport = 1
 					scr_text("Light weight baby!","teenager_happy")
 					global.karma += 1;
-
+					obj_SFX.goodChoiseSnd = true;
 					if (!instance_exists(obj_fade))
 				{
 					var _targetRoom = rm_teenager_room;
-					scr_fade(_targetRoom,60,c_black);
+					scr_fade(_targetRoom,30,c_grass);
 				}
 					break;
 			}
@@ -280,7 +289,7 @@ function scr_game_text(_text_id)
 				scr_text("Да нафиг этот спорт нужен вообще!","teenager_angry")
 				global.karma -= 1;
 				global._no_sport = 1;
-			
+			obj_SFX.badChoiseSnd = true;
 			break;
 			}
 			
@@ -327,6 +336,7 @@ function scr_game_text(_text_id)
 					scr_text("С глаз долой... Из сердца вон!","teenager_happy")
 					global.karma += 1;
 					global._trash = 1;
+					obj_SFX.goodChoiseSnd = true;
 
 					if (!instance_exists(obj_fade))
 				{
@@ -341,6 +351,7 @@ function scr_game_text(_text_id)
 				scr_text("Как-нибудь потом...","teenager_sad")
 				global.karma -= 1;
 				global._trash_not_clean = 1;
+				obj_SFX.badChoiseSnd = true;
 			
 			break;
 			}
